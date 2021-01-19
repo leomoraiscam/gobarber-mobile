@@ -13,7 +13,7 @@ import {
   ForgotPassword,
   ForgotPasswordText,
   CreateAccountButton,
-  CreateAccountButtonText
+  CreateAccountButtonText,
 } from './styles';
 
 const SignIn: React.FC = () => {

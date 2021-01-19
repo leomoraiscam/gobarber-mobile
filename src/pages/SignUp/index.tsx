@@ -46,12 +46,12 @@ const SignUp: React.FC = () => {
               <Title>Crie sua conta</Title>
             </View>
 
-            <Form  ref={formRef} onSubmit={handleSignUp}>
-              <Input name="name" icon="user" placeholder="E-mail"/>
+            <Form ref={formRef} onSubmit={handleSignUp} >
+              <Input name="name" icon="user" placeholder="Nome"/>
               <Input name="email" icon="mail" placeholder="E-mail"/>
               <Input name="password" icon="lock" placeholder="Senha"/>
 
-              <Button onPress={() => formRef.current?.submitForm()}>Entrar</Button>
+              <Button onPress={()=> formRef.current?.submitForm()}>Entrar</Button>
             </Form>
           </Container>
         </ScrollView>
