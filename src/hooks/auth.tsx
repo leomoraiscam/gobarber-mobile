@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
 import api from '../services/api';
+import { da } from 'date-fns/esm/locale';
 
 interface User {
   id: string;
@@ -25,7 +26,7 @@ interface AuthContextState {
   user: User;
   signIn(credentials: SignInCredentials): Promise<void>;
   signOut(): void;
-  updateUser(user: User): void;
+  updateUser(user: User): Promise<void>;
   loading: boolean;
 }
 
@@ -86,7 +87,7 @@ const AuthProvider: React.FC = ({ children }) => {
 
     setData({
       token: data.token,
-      user,
+      user
     });
   }, [setData, data.token]);
 
